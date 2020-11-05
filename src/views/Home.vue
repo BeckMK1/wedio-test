@@ -3,9 +3,10 @@
     <h1>This is home page</h1>
     <img alt="Vue logo" src="../assets/images/logo-wedio-black.svg" class="wedio-logo"/>
     <Content msg="Welcome to Your Wedio Internship Test" />
-    <div class="modal-content" v-if="!isHidden">
+    <div class="modal-content" v-show="!isHidden">
       <Modal></Modal>
     </div>
+    <button v-on:click="isHidden = !isHidden">Call To Action</button>
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
   },
   data() {
     return{
-      isHidden: false
+      isHidden: true
     }
   }
 };
