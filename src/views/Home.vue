@@ -3,29 +3,27 @@
     <h1>This is home page</h1>
     <img alt="Vue logo" src="../assets/images/logo-wedio-black.svg" class="wedio-logo"/>
     <Content msg="Welcome to Your Wedio Internship Test" />
-    <div class="modal-content" v-show="!isHidden">
-      <Modal></Modal>
-    </div>
-    <button v-on:click="isHidden = !isHidden">Call To Action</button>
+    <ModalButton></ModalButton>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Content from "@/components/Content.vue";
-import Modal from "@/components/Modal.vue";
+import ModalButton from "@/components/ModalButton.vue";
 
 export default {
   name: "Home",
   components: {
     Content,
-    Modal
-  },
-  data() {
-    return{
-      isHidden: true
-    }
+    ModalButton
   }
+  // data() {
+  //   return{
+  //     isHidden: true,
+  //     isFocus: true
+  //   }
+  // }
 };
 </script>
 
@@ -40,9 +38,5 @@ export default {
 h1{
   margin-top: 100px ;
 }
-.modal-content{
-left: calc(50% - 250px);
-bottom: 70%;
-position: absolute;
-}
+
 </style>
