@@ -3,20 +3,20 @@
     <h1>This is about page</h1>
     <img alt="Vue logo" src="../assets/images/logo-wedio-black.svg" class="wedio-logo"/>
     <Content msg="Welcome to Your Wedio Internship Test" />
-    <ModalButton></ModalButton>
+    <Modal></Modal>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Content from "@/components/Content.vue";
-import ModalButton from "@/components/ModalButton.vue";
+import Modal from "@/components/Modal.vue";
 
 export default {
   name: "Home",
   components: {
     Content,
-    ModalButton
+    Modal
   }
 };
 </script>
