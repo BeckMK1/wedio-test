@@ -1,22 +1,27 @@
 <template>
     <div class="modal" v-if="!isHidden">
+        <!-- title -->
         <header>
             <img src="../assets/images/logo-wedio-white.svg" alt="wedio logo">
             <p>The only true opinion </p>
         </header>
+        <!-- content -->
         <section>
             <p>Dota 2 is better than LoL in every conceivable way possible</p>
-            
         </section>
         <footer>
+            <!-- CTA buttons -->
             <div class="modal-cta">
                 <button class="wedio-button tiny" @click="Iagree = !Iagree, isHidden = !isHidden, isFocus = !isFocus, fade()">I agree</button>
                 <button class="wedio-button tiny" @click="isHidden = !isHidden, isFocus = !isFocus ">I don't agree</button>
             </div>
         </footer>
     </div>
+    <!-- dark background -->
     <div class="modal-focus" v-show="!isFocus" @click="isHidden = !isHidden, isFocus = !isFocus"></div>
+    <!-- modal button -->
     <button class="wedio-button" @click="isHidden = !isHidden,  isFocus = !isFocus">Call To Action</button>
+    <!-- agree button animation  -->
     <div class="agree" v-show="Iagree">&#10003;</div>
 </template>
 
@@ -31,6 +36,7 @@ export default {
     }
 
   },
+  //agree animaion boolean reset 
   methods:{
   fade(){
     setTimeout(() => this.Iagree = false, 1000)
@@ -42,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles/variables.scss';
 @import '../assets/styles/buttons.scss';
+// modal size
 .modal{
     width: 500px;
     background: $white;
@@ -69,6 +76,7 @@ footer{
     }
 }
 }
+// cta button style
 .modal-cta{
 display: flex;
 justify-content: center;
@@ -81,35 +89,38 @@ justify-content: space-around;
 .modal-cta :nth-child(2){
     background: red;
 }
+// modal drak background style
 .modal-focus{
   background: black;
-position: absolute;
-top:0;
-bottom:0;
-left: 0;
-right: 0;
-z-index: 2;
-opacity: 70%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 50%;
 }
 .wedio-button{
     margin-bottom: 18px;
 }
+
+// agree style and animation
 .agree{
-width: 150px;
-height: 150px;
-background: green;
-border-radius: 100%;
-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 5rem;
-position: absolute;
-left: calc(50% - 75px);
-bottom: 70%;
-z-index: 5;
-animation: start 1s;
-opacity: 0;
+    width: 150px;
+    height: 150px;
+    background: green;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: absolute;
+    left: calc(50% - 75px);
+    bottom: 70%;
+    z-index: 5;
+    animation: start 1s;
+    opacity: 0;
 }
 @keyframes start {
     from{
