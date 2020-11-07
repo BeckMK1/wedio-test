@@ -91,7 +91,7 @@ justify-content: space-around;
 }
 // modal drak background style
 .modal-focus{
-  background: black;
+    background: black;
     position: absolute;
     top:0;
     bottom:0;
@@ -128,7 +128,7 @@ justify-content: space-around;
         opacity: 1;
     }
     to {
-        transform: scale(1.0);
+        transform: scale(1);
         opacity: 0;
     }
 }
